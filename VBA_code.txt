@@ -1,0 +1,182 @@
+1st I have no idea what I'm doing
+
+Sub Ticker_loop()
+    
+    Dim Ticker As String
+    
+    'For Each ws In Worksheets
+    For i = 2 To LastRow
+        
+        LastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
+        
+        Ticker = Cells(i, 1).String
+        
+        Cells(i, 9).String = " "
+                
+    Next i
+    
+    
+End Sub
+
+2nd
+
+Sub Ticker()
+
+    Dim Ticker As String
+    For i = 2 To 20
+    
+    Ticker = Cells(i, 1)
+    
+    Cells(i, 9) = Ticker
+               
+        
+    Next i
+    
+End Sub
+
+3rd
+
+Sub Ticker()
+    
+    'For Each ws In Worksheets
+    
+
+        Dim Ticker As String
+    
+        For i = 2 To Last_Row
+        
+        Last_Row = Range(A1).End(xlUp).Row
+        
+    
+    Ticker = Cells(i, 1)
+    
+    Cells(i, 9) = Ticker
+               
+        
+    Next i
+    
+End Sub
+
+4th
+    'For Each ws In Worksheets
+    
+
+        Dim Ticker As String
+    
+        For i = 2 To Last_Row
+        
+        Last_Row As Long
+        
+        Last_Row = Cells(Rows.Count, 1).End(xlUp).Row
+        
+    
+    Ticker = Cells(i, 1)
+    
+    Cells(i, 9) = Ticker
+               
+        
+    Next i
+    
+End Sub
+
+*****5th Breakthrough, works only on the first worksheet*****
+
+Sub Ticker()
+    
+    'For Each ws In Worksheets
+    
+        Dim Ticker As String
+          
+        Last_Row = Cells(Rows.Count, 1).End(xlUp).Row
+    
+        For i = 2 To Last_Row
+    
+        Ticker = Cells(i, 1)
+        
+        Cells(i, 9) = Ticker
+    
+                  
+        
+    Next i
+    
+End Sub
+
+*****6th Loop works for all of the worksheets *****
+
+Sub Ticker()
+    
+    For Each ws In Worksheets
+    
+        Dim Ticker As String
+          
+        Last_Row = ws.Cells(Rows.Count, 1).End(xlUp).Row
+    
+        For i = 2 To Last_Row
+    
+        Ticker = ws.Cells(i, 1)
+        
+        ws.Cells(i, 9) = Ticker
+        
+    Next i
+    
+    Next ws
+    
+    
+End Sub
+ 
+7th
+
+Sub Ticker()
+    
+    For Each ws In Worksheets
+    
+        Dim Ticker As String
+          
+        Last_Row = ws.Cells(Rows.Count, 1).End(xlUp).Row
+    
+        For i = 2 To Last_Row
+    
+        Ticker = ws.Cells(i, 1)
+        
+        ws.Cells(i, 9) = Ticker
+        
+        If Ticker = 0 Then GoTo NextIteration <--From StackOverflow
+      
+NextIteration:
+        
+    Next i
+    
+    Next ws
+    
+    
+End Sub
+
+8th
+
+Sub Ticker()
+    
+    For Each ws In Worksheets
+    
+        Dim Ticker As String
+          
+        Last_Row = ws.Cells(Rows.Count, 1).End(xlUp).Row
+    
+        For i = 2 To Last_Row
+    
+        Ticker = ws.Cells(i, 1)
+        
+        If Ticker = ws.Cells(i + 1, 1) Then GoTo NextIteration
+                    
+        ws.Cells(i, 9) = Ticker
+           
+       
+    Next i
+    
+    Next ws
+    
+    
+End Sub
+
+9th
+
+
